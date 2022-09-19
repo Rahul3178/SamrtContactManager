@@ -5,9 +5,12 @@
 	<title th:text="${title}">Home</title>
 </head>
 <body>
-	<section>
-	
-	<h1>This is home page</h1>
+	<section class="banner d-flex justify-content-center align-items-center">
+		<div class="text-center text-white">
+			<h1 class="font-weight-bold">Smart Contact Manager</h1>
+			<p>Its a Smart and Efficient way to Manage contacts </p>
+			<a class="btn  bg-primary text-white btn-lg" th:href="@{/signup/}">Get Start</a>
+		</div>
 	</section>
 	
 </body>

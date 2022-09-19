@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" xnlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title th:text="${title}">Signin</title>
+</head>
+<body>
+	<section>
+
+		<div class="container mt-md-5">
+			<div class="row mt-5 justify-content-center border border-3">
+				<!-- div one -->
+				<div class="col-md-5 offset-md-1 m-auto border border-3">
+					<div class="container text-center">
+						<img th:src="@{/img/child2.png}" src="" alt="child2">
+					</div>
+				</div>
+				<!-- div 2 -->
+				<div class="col-md-5 offset-md-1 m-auto border border-3">
+					<div class="my-card">
+						<div class="container text-center mb-3">
+							<img th:src="@{/img/user.png}" src="" alt="user"
+								style="height: 150px; width: 150px;">
+						</div>
+						<!-- Display Error Message -->
+
+						<div th:if="${param.error}"
+							class="alert alert-dismissible fade show alert-danger text-center" role="alert">
+							<strong>Invalid Username and
+								Password...</strong>
+							<button type="button" class="btn-close" data-bs-dismiss="alert"
+								aria-label="Close"></button>
+						</div>
+						<!--End Error message  -->
+						<!-- Display Logout Message -->
+
+						<div th:if="${param.logout}"
+							class="alert alert-success alert-dismissible fade show text-center" role="alert">
+							<strong>You have been logout...</strong>
+							<button type="button" class="btn-close" data-bs-dismiss="alert"
+								aria-label="Close"></button>
+						</div>
+						<!--End Error message  -->
+						<form action="#" th:action="@{/dologin}" method="POST">
+							<div class="mb-3">
+								<input type="email" class="form-control" name="username"
+									placeholder="Email...">
+
+							</div>
+							<div class="mb-3">
+								<input type="password" class="form-control" name="password"
+									placeholder="Password...">
+							</div>
+							<div class="container mb-3">
+								<div class="row justify-content-around">
+									<!--remember me check box -->
+									<div class="col">
+										<label for="remember-me" class="heading"><span>Remember
+												me</span> <span><input id="remember-me" name="remember-me"
+												type="checkbox"></span></label><br>
+									</div>
+									<div class="col">
+										<!--register here check Button-->
+										<div class="heading">
+											<a href="" th:href="@{/signup/}" class="heading">Register
+												here</a>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<div class="container text-center mb-3">
+
+								<button type="submit" class="btn btn-outline-success">Submit</button>
+							</div>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</section>
+
+</body>
+</html>
